@@ -72,6 +72,8 @@ export default function MainScreen() {
       setKotaId(null);
       setKecamatanName('');
       setKecamatanId(null);
+      getKota('');
+      getKecamatan('');
     } catch (error) {
       console.error(error);
     } finally {

@@ -141,7 +141,7 @@ export const ApiContextProvider = ({children}: ApiContextProps) => {
           Alert.alert(response.data.detail)
         })
         .catch(error => {
-          Alert.alert('Error')
+          Alert.alert(error)
         });
     } else {
       Alert.alert('Semua Field Harus Diisi');
