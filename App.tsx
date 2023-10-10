@@ -1,10 +1,13 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { ApiContextProvider } from './assets/context/ApiContext'
+import MainScreen from './assets/screen/MainScreen'
+import { StatusBar } from 'react-native'
 
 export default function App() {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <ApiContextProvider>
+      <StatusBar barStyle="dark-content" />
+      <MainScreen />
+    </ApiContextProvider>
   )
 }
