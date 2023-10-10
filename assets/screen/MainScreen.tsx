@@ -62,7 +62,6 @@ export default function MainScreen() {
   };
 
   const handleRegister = async () => {
-    setIsLoading(true);
     try {
       await register(nama, provinsiName, kotaName, kecamatanName);
       setNama('');
@@ -217,12 +216,14 @@ export default function MainScreen() {
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
+            setIsLoading(true);
             handleRegister();
-          }}>
-          {isLoading ? (
-            <ActivityIndicator color="#fff" />
-          ) : (
+          }}
+          disabled={isLoading}>
+          {!isLoading ? (
             <Text style={styles.buttonText}>Register</Text>
+          ) : (
+            <ActivityIndicator color="#fff" />
           )}
         </TouchableOpacity>
       </View>
